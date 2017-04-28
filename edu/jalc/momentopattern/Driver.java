@@ -11,8 +11,11 @@ public class Driver {
 
 		logger.message(State.DEBUG, "debugging").save();
 		logger.message(State.INFO, "info").save();
+		logger.message(State.WARN, "oh oh").save();
 
 		System.out.println(logger.get(0));
 		System.out.println(logger.get(1));
+
+		System.out.println(logger.getWarnings());
 	}
 }

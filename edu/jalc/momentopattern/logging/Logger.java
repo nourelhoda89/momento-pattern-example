@@ -3,6 +3,8 @@ package edu.jalc.momentopattern.logging;
 import edu.jalc.momentopattern.logging.messages.*;
 import edu.jalc.momentopattern.logging.messages.Error;
 
+import java.util.ArrayList;
+
 public class Logger {
 
 	private String message;
@@ -34,5 +36,9 @@ public class Logger {
 
 	public Message get(int position){
 		return caretaker.get(position);
+	}
+
+	public ArrayList<Message> getWarnings(){
+		return caretaker.getAll(State.WARN);
 	}
 }
