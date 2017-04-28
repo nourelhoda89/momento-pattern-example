@@ -3,19 +3,19 @@ package edu.jalc.momentopattern.logging;
 import edu.jalc.momentopattern.logging.messages.*;
 import edu.jalc.momentopattern.logging.messages.Error;
 
-public class Log {
+public class Logger {
 
 	private String message;
 	private State state;
 	private Caretaker caretaker = new Caretaker();
 
-	public Log message(State state, String message){
+	public Logger message(State state, String message){
 		this.message = message;
 		this.state = state;
 		return this;
 	}
 
-	public Log save() throws Exception {
+	public Logger save() throws Exception {
 		if(state == null || message == null) throw new Exception("State | Message cannot be null");
 
 		Message message;
