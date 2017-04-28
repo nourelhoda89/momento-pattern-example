@@ -41,4 +41,9 @@ public class Logger {
 	public ArrayList<Message> getWarnings(){
 		return caretaker.getAll(State.WARN);
 	}
+   
+   public ArrayList<Message> getErrors(){
+		return caretaker.getAll(State.ERROR);
+	}
+
 }

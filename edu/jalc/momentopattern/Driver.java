@@ -12,10 +12,15 @@ public class Driver {
 		logger.message(State.DEBUG, "debugging").save();
 		logger.message(State.INFO, "info").save();
 		logger.message(State.WARN, "oh oh").save();
-
+      logger.message(State.ERROR, "error").save();
+      logger.message(State.WARN, "oh no").save();
+      logger.message(State.ERROR, "err").save();
+      
 		System.out.println(logger.get(0));
 		System.out.println(logger.get(1));
-
+    
+      
 		System.out.println(logger.getWarnings());
+      System.out.println(logger.getErrors());
 	}
 }

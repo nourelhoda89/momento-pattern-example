@@ -1,6 +1,7 @@
 package edu.jalc.momentopattern.logging;
 
-import edu.jalc.momentopattern.logging.messages.Warn;
+import edu.jalc.momentopattern.logging.messages.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +27,20 @@ class Caretaker {
 		if(context == State.WARN){
 			filtered =  (ArrayList<Message>) this.getWarnings();
 		}
-
+      else if (context == State.ERROR){
+         filtered = (ArrayList<Message>) this.getErrors();
+      }
 		return filtered;
 	}
 
 	private List<Message> getWarnings(){
 
 		return messages.parallelStream().filter((message) -> message instanceof Warn).collect(Collectors.toList());
+
+	}
+   private List<Message> getErrors(){
+
+		return messages.parallelStream().filter((message) -> message instanceof edu.jalc.momentopattern.logging.messages.Error).collect(Collectors.toList());
 
 	}
 
